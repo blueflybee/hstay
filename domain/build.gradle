@@ -1,0 +1,19 @@
+apply plugin: 'java-library'
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+//    provided domainDependencies.daggerCompiler
+//    provided domainDependencies.javaxAnnotation
+//
+//    compile domainDependencies.dagger
+//    compile domainDependencies.rxJava
+//
+//    compile domainDependencies.gson
+//
+//    testCompile domainTestDependencies.junit
+//    testCompile domainTestDependencies.mockito
+}
