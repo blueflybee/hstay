@@ -3,8 +3,6 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 27
 
-
-
     defaultConfig {
         minSdkVersion 18
         targetSdkVersion 27
@@ -12,7 +10,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
     }
 
     buildTypes {
@@ -26,6 +24,12 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
     }
 
     packagingOptions {
@@ -52,4 +56,32 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(':domain')
+
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation "com.orhanobut:logger:$rootProject.ext.loggerVersion"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okHttpVersion"
+    implementation "com.blankj:utilcode:$rootProject.ext.androidUtilCodeVersion"
+
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
+
+    implementation "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
+
+    compileOnly "org.glassfish:javax.annotation:$rootProject.ext.javaxAnnotationVersion"
+    implementation "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+    compileOnly "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    testImplementation "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
+    testImplementation "org.assertj:assertj-core:$rootProject.ext.assertJVersion"
+
+    //keystore
+    implementation name:'keylibrary-0.0.15', ext:'aar'
+
+    //sm4
+    implementation 'com.github.blueflybee:sm2sm3sm4:v0.0.3'
 }
