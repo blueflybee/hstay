@@ -1,0 +1,6 @@
+app框架附属功能考虑：
+1、日志打印
+2、部分日志写入文件
+3、app crash处理和crash日志保存（也考虑umeng记录）
+4、app requestPermission统一请求
+5、工具类优先统一使用util code工具库

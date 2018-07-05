@@ -17,6 +17,8 @@ package com.qtec.homestay.domain.repository;
 
 
 import com.qtec.homestay.domain.model.mapp.rsp.LoginResponse;
+import com.qtec.homestay.domain.model.mapp.rsp.TransmitResponse;
+import com.qtec.homestay.domain.model.router.rsp.BindRouterToLockResponse;
 import com.qtec.homestay.domain.params.IRequest;
 
 import io.reactivex.Observable;
@@ -27,5 +29,7 @@ import io.reactivex.Observable;
 public interface CloudRepository {
 
   Observable<LoginResponse> login(IRequest request);
+
+  Observable<BindRouterToLockResponse> bindRouterToLockTrans(IRequest request);
 
 }

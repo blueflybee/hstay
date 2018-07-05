@@ -1,21 +1,24 @@
 package com.qtec.homestay;
 
 import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.qtec.homestay.databinding.ActivityMainBinding;
 
+
 public class MainActivity extends AppCompatActivity {
 
-  private ActivityMainBinding mBinding;
+//  private Activity mBinding;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-//    setContentView(R.layout.activity_main);
-    mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    setContentView(R.layout.activity_main);
+    ViewDataBinding viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    ActivityMainBinding a =  ((ActivityMainBinding) viewDataBinding);
 
 //    mBinding.btn2.setOnClickListener(new View.OnClickListener() {
 //      @Override

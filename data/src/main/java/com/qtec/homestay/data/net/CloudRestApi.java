@@ -16,6 +16,7 @@
 package com.qtec.homestay.data.net;
 
 import com.qtec.homestay.domain.model.mapp.rsp.LoginResponse;
+import com.qtec.homestay.domain.model.mapp.rsp.TransmitResponse;
 import com.qtec.homestay.domain.params.IRequest;
 
 import io.reactivex.Observable;
@@ -35,6 +36,6 @@ public interface CloudRestApi {
    */
   Observable<LoginResponse> login(IRequest request);
 
-//  Observable<TransmitResponse<String>> remoteUnlockTrans(IRequest request);
+  Observable<TransmitResponse<String>> bindRouterToLockTrans(IRequest request);
 
 }

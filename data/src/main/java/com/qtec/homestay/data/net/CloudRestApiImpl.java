@@ -111,10 +111,10 @@ public class CloudRestApiImpl implements CloudRestApi {
     });
   }
 
-//  @Override
-//  public Observable<TransmitResponse<String>> bindRouterToLockTrans(IRequest request) {
-//    return createTransmitObservable(request, 0);
-//  }
+  @Override
+  public Observable<TransmitResponse<String>> bindRouterToLockTrans(IRequest request) {
+    return createTransmitObservable(request, 0);
+  }
 
   @NonNull
   private Observable<TransmitResponse<String>> createTransmitObservable(final IRequest request, final int encryption) {
