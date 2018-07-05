@@ -17,16 +17,17 @@ package com.qtec.homestay.internal.di.modules;
 
 import android.content.Context;
 
-import com.fernandocejas.android10.sample.data.executor.JobExecutor;
-import com.fernandocejas.android10.sample.domain.executor.PostExecutionThread;
-import com.fernandocejas.android10.sample.domain.executor.ThreadExecutor;
-import com.fernandocejas.android10.sample.domain.repository.CloudRepository;
-import com.fernandocejas.android10.sample.domain.repository.RouterRepository;
-import com.fernandocejas.android10.sample.presentation.AndroidApplication;
-import com.fernandocejas.android10.sample.presentation.UIThread;
-import com.fernandocejas.android10.sample.presentation.navigation.Navigator;
-import com.fernandocejas.android10.sample.presentation.net.FakeCloudRepository;
-import com.fernandocejas.android10.sample.presentation.net.FakeRouterRepository;
+
+import com.qtec.homestay.AndroidApplication;
+import com.qtec.homestay.UIThread;
+import com.qtec.homestay.data.executor.JobExecutor;
+import com.qtec.homestay.domain.executor.PostExecutionThread;
+import com.qtec.homestay.domain.executor.ThreadExecutor;
+import com.qtec.homestay.domain.repository.CloudRepository;
+import com.qtec.homestay.domain.repository.RouterRepository;
+import com.qtec.homestay.navigation.Navigator;
+import com.qtec.homestay.net.FakeCloudRepository;
+import com.qtec.homestay.net.FakeRouterRepository;
 
 import javax.inject.Singleton;
 
@@ -48,15 +49,18 @@ public class ApplicationModule {
     return this.application;
   }
 
-  @Provides @Singleton Navigator provideNavigator() {
+  @Provides @Singleton
+  Navigator provideNavigator() {
     return new Navigator();
   }
 
-  @Provides @Singleton ThreadExecutor provideThreadExecutor(JobExecutor jobExecutor) {
+  @Provides @Singleton
+  ThreadExecutor provideThreadExecutor(JobExecutor jobExecutor) {
     return jobExecutor;
   }
 
-  @Provides @Singleton PostExecutionThread providePostExecutionThread(UIThread uiThread) {
+  @Provides @Singleton
+  PostExecutionThread providePostExecutionThread(UIThread uiThread) {
     return uiThread;
   }
 
