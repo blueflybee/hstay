@@ -110,7 +110,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    compile project(':data')
+    api project(':data')
     implementation "com.orhanobut:logger:$rootProject.ext.loggerVersion"
     implementation "com.blankj:utilcode:$rootProject.ext.androidUtilCodeVersion"
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
@@ -124,6 +124,6 @@ dependencies {
     implementation "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
 
 
-    compile name:'uilibrary1-v0.0.7', ext:'aar'
+    implementation name:'uilibrary1-v0.0.7', ext:'aar'
 
 }
