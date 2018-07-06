@@ -1,6 +1,7 @@
-app框架附属功能考虑：
-1、日志打印
-2、部分日志写入文件
-3、app crash处理和crash日志保存（也考虑umeng记录）
-4、app requestPermission统一请求
-5、工具类优先统一使用util code工具库
+app框架使用说明：
+1、日志打印已统一处理
+2、部分日志写入文件（后面有需要可以配置）
+3、app crash处理和crash日志保存路径：/data/data/pkg_name/files/crash/
+4、crash日志已经上报umeng，需要umeng创建应用后才可用
+4、app requestPermission统一请求配置
+5、工具类优先统一使用utilcode工具库

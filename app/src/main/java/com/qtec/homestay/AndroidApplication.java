@@ -147,7 +147,6 @@ public class AndroidApplication extends Application {
 
   @SuppressLint("MissingPermission")
   private void handleCrashLog() {
-    //data/data/app_pkg/files/crash
     File filesDir = new File(getFilesDir().getAbsolutePath() + System.getProperty("file.separator") + "crash");
     CrashUtils.init(filesDir, (crashInfo, e) -> MobclickAgent.reportError(getApplicationContext(), e));
   }
