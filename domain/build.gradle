@@ -20,9 +20,9 @@ dependencies {
 
     implementation "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
 
-    provided "org.glassfish:javax.annotation:$rootProject.ext.javaxAnnotationVersion"
+    compileOnly "org.glassfish:javax.annotation:$rootProject.ext.javaxAnnotationVersion"
     implementation "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
-    provided "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+    compileOnly "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
 
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
     testImplementation "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
