@@ -15,9 +15,12 @@
  */
 package com.qtec.homestay;
 
+import android.Manifest;
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
+import com.blankj.utilcode.util.PermissionUtils;
 import com.blankj.utilcode.util.Utils;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
@@ -39,6 +42,7 @@ import com.umeng.analytics.MobclickAgent;
 public class AndroidApplication extends Application implements Thread.UncaughtExceptionHandler {
 
   public static final String APP = "RT";
+  private static final String TAG = AndroidApplication.class.getSimpleName();
 
   private ApplicationComponent mApplicationComponent;
 
@@ -66,6 +70,8 @@ public class AndroidApplication extends Application implements Thread.UncaughtEx
     initUmengAnalytics();
 
 //    initLog();
+
+    requestPermissions();
 
   }
 
@@ -141,6 +147,29 @@ public class AndroidApplication extends Application implements Thread.UncaughtEx
     IPostConnection routerConnection =
         ConnectionCreator.create(ConnectionCreator.ROUTER_CONNECTION, RouterRestApi.URL_DEBUG);
     RouterRestApiImpl.setApiPostConnection(routerConnection);
+  }
+
+  private void requestPermissions() {
+    String[] perms = {
+        Manifest.permission.ACCESS_FINE_LOCATION,
+        Manifest.permission.CAMERA,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.RECORD_AUDIO
+    };
+    PermissionUtils
+        .permission(perms)
+        .callback(new PermissionUtils.SimpleCallback() {
+          @Override
+          public void onGranted() {
+            Log.i(TAG, "允许权限");
+          }
+
+          @Override
+          public void onDenied() {
+            Log.i(TAG, "拒绝权限");
+          }
+        }).request();
   }
 
   public ApplicationComponent getApplicationComponent() {
