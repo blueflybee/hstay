@@ -110,9 +110,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    api project(':data')
+    compile project(':data')
     implementation "com.orhanobut:logger:$rootProject.ext.loggerVersion"
     implementation "com.blankj:utilcode:$rootProject.ext.androidUtilCodeVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
     compileOnly "org.glassfish:javax.annotation:$rootProject.ext.javaxAnnotationVersion"
     implementation "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
@@ -120,8 +121,9 @@ dependencies {
     implementation "com.umeng.analytics:analytics:$rootProject.ext.umengVersion"
 
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    implementation "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
 
 
-    api name:'uilibrary1-v0.0.7', ext:'aar'
+    compile name:'uilibrary1-v0.0.7', ext:'aar'
 
 }

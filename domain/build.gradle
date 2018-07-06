@@ -16,9 +16,9 @@ sourceSets {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
 
-    api "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
+    implementation "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
 
     compileOnly "org.glassfish:javax.annotation:$rootProject.ext.javaxAnnotationVersion"
     implementation "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
