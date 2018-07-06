@@ -16,7 +16,6 @@
 package com.qtec.homestay.interactor;
 
 
-import com.qtec.homestay.AndroidApplication;
 import com.qtec.homestay.data.constant.PrefConstant;
 import com.qtec.homestay.data.exception.LoginInvalidException;
 import com.qtec.homestay.domain.exception.DefaultErrorBundle;

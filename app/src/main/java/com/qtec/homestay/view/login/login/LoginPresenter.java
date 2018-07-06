@@ -25,8 +25,6 @@ import javax.inject.Named;
 
 import dagger.internal.Preconditions;
 
-
-
 /**
  * <pre>
  *     author : shaojun
