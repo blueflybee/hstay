@@ -18,7 +18,7 @@ package com.qtec.homestay.internal.di.components;
 
 import com.qtec.homestay.internal.di.PerActivity;
 import com.qtec.homestay.internal.di.modules.ActivityModule;
-import com.qtec.homestay.internal.di.modules.LoginModule;
+import com.qtec.homestay.internal.di.modules.UserModule;
 import com.qtec.homestay.view.login.login.LoginActivity;
 
 import dagger.Component;
@@ -28,8 +28,8 @@ import dagger.Component;
  * Injects user specific Fragments.
  */
 @PerActivity
-@Component(dependencies = ApplicationComponent.class, modules = {ActivityModule.class, LoginModule.class})
-public interface LoginComponent extends ActivityComponent {
+@Component(dependencies = ApplicationComponent.class, modules = {ActivityModule.class, UserModule.class})
+public interface UserComponent extends ActivityComponent {
 
   void inject(LoginActivity loginActivity);
 

@@ -31,11 +31,12 @@ import dagger.Provides;
 
 /**
  * Dagger module that provides user related collaborators.
+ * UserModule包括登录、注册、忘记密码、修改密码等用户模块的功能
  */
 @Module
-public class LoginModule {
+public class UserModule {
 
-  public LoginModule() {}
+  public UserModule() {}
 
   @Provides
   @PerActivity

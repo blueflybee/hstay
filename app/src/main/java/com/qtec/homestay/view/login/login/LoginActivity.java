@@ -2,7 +2,6 @@
 
 package com.qtec.homestay.view.login.login;
 
-import android.Manifest;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,12 +9,10 @@ import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.blankj.utilcode.util.KeyboardUtils;
-import com.blankj.utilcode.util.PermissionUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.qtec.homestay.MainActivity;
 import com.qtec.homestay.R;
@@ -23,10 +20,9 @@ import com.qtec.homestay.data.constant.PrefConstant;
 import com.qtec.homestay.data.net.CloudUrlPath;
 import com.qtec.homestay.databinding.ActivityLoginCritterBinding;
 import com.qtec.homestay.domain.model.mapp.rsp.LoginResponse;
-import com.qtec.homestay.internal.di.components.DaggerLoginComponent;
-import com.qtec.homestay.internal.di.modules.LoginModule;
+import com.qtec.homestay.internal.di.components.DaggerUserComponent;
+import com.qtec.homestay.internal.di.modules.UserModule;
 import com.qtec.homestay.utils.ClickUtil;
-import com.qtec.homestay.utils.DialogUtil;
 import com.qtec.homestay.utils.InputUtil;
 import com.qtec.homestay.view.activity.BaseActivity;
 import com.qtec.homestay.view.component.InputWatcher;
@@ -165,16 +161,15 @@ public class LoginActivity extends BaseActivity implements LoginView {
     });
   }
 
-
   private void initPresenter() {
     mLoginPresenter.setView(this);
   }
 
   private void initializeInjector() {
-    DaggerLoginComponent.builder()
+    DaggerUserComponent.builder()
         .applicationComponent(getApplicationComponent())
         .activityModule(getActivityModule())
-        .loginModule(new LoginModule())
+        .userModule(new UserModule())
         .build()
         .inject(this);
   }
