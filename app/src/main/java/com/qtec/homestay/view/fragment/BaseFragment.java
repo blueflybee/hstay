@@ -6,34 +6,26 @@
 package com.qtec.homestay.view.fragment;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.blankj.utilcode.util.ToastUtils;
-
 import com.qtec.homestay.R;
-import com.qtec.homestay.domain.model.lock.model.core.BleBody;
 import com.qtec.homestay.internal.di.HasComponent;
 import com.qtec.homestay.navigation.Navigator;
 import com.qtec.homestay.utils.DialogUtil;
 import com.qtec.homestay.view.LoadDataView;
 import com.qtec.homestay.view.activity.BaseActivity;
 import com.qtec.homestay.view.component.TitleBar;
-import com.qtec.homestay.view.login.login.LoginActivity;
 import com.umeng.analytics.MobclickAgent;
 
 import javax.inject.Inject;
-
-//import com.umeng.analytics.MobclickAgent;
 
 /**
  * Base {@link Fragment} class for every fragment in this application.
@@ -44,8 +36,6 @@ public abstract class BaseFragment extends Fragment implements LoadDataView {
   protected Navigator mNavigator;
 
   protected TitleBar mTitleBar;
-  protected boolean mIsMoreThanOneUser;
-  protected boolean mIsAdmin;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
