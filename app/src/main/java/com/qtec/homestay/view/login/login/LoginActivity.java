@@ -67,7 +67,6 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     checkAutoLogin();
 
-
   }
 
   private void checkAutoLogin() {
@@ -183,6 +182,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
   public void login(View view) {
     if (ClickUtil.isFastClick()) return;
     mLoginPresenter.login(username(), password());
+//    throw new NullPointerException("crash log test!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
   }
 
   public void forgetPwd(View view) {
