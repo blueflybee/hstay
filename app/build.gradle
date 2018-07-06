@@ -113,7 +113,6 @@ dependencies {
     api project(':data')
     implementation "com.orhanobut:logger:$rootProject.ext.loggerVersion"
     implementation "com.blankj:utilcode:$rootProject.ext.androidUtilCodeVersion"
-    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
     compileOnly "org.glassfish:javax.annotation:$rootProject.ext.javaxAnnotationVersion"
     implementation "com.google.dagger:dagger:$rootProject.ext.daggerVersion"

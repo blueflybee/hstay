@@ -16,7 +16,7 @@ sourceSets {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
+    api "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
 
     api "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
 
