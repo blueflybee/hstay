@@ -20,7 +20,6 @@ import com.qtec.homestay.data.constant.PrefConstant;
 import com.qtec.homestay.data.exception.LoginInvalidException;
 import com.qtec.homestay.domain.exception.DefaultErrorBundle;
 import com.qtec.homestay.domain.interactor.DefaultObserver;
-import com.qtec.homestay.exception.ErrorMessageFactory;
 import com.qtec.homestay.view.LoadDataView;
 
 import java.util.List;
