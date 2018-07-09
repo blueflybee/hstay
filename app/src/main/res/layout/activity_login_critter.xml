@@ -14,14 +14,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.blueflybee.uilibrary1.logincritter.component.CritterView
-                android:id="@+id/view_critter"
-                android:layout_width="486px"
-                android:layout_height="486px"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="45dp"/>
-
-
             <RelativeLayout
                 style="@style/LoginInputItemLayoutStyle"
                 android:layout_width="268dp"

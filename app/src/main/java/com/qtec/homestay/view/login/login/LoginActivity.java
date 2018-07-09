@@ -4,15 +4,10 @@ package com.qtec.homestay.view.login.login;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.view.MotionEvent;
 import android.view.View;
 
-import com.blankj.utilcode.util.KeyboardUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.qtec.homestay.MainActivity;
 import com.qtec.homestay.R;
@@ -58,8 +53,6 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     mBinding.etName.setText(PrefConstant.getUserPhone());
 
-    addTextWatcherNameEt();
-
     /*mBinding.etPwd.setText("123456");*/
 
     checkAutoLogin();
@@ -77,50 +70,6 @@ public class LoginActivity extends BaseActivity implements LoginView {
   }
 
   private void initView() {
-    mBinding.viewCritter.setMaxWatchLength(11);
-    mBinding.etName.setOnTouchListener(new View.OnTouchListener() {
-      int touchCount = 0;
-
-      @Override
-      public boolean onTouch(View v, MotionEvent event) {
-        touchCount++;
-        if (touchCount == 2) {
-          touchCount = 0;
-          mBinding.viewCritter.applyActive();
-          Object tag = mBinding.etName.getTag();
-          if (tag == null) {
-            new Handler().postDelayed(() -> mBinding.viewCritter.applyWatch(username().length()), 450);
-          }
-        }
-        return false;
-      }
-    });
-
-    mBinding.etPwd.setOnTouchListener(new View.OnTouchListener() {
-      int touchCount = 0;
-
-      @Override
-      public boolean onTouch(View v, MotionEvent event) {
-        touchCount++;
-        if (touchCount == 2) {
-          touchCount = 0;
-          if (mBinding.ivShowPwd.isChecked()) {
-            mBinding.viewCritter.applyShy();
-          } else {
-            mBinding.viewCritter.applyPeek();
-          }
-        }
-        return false;
-      }
-    });
-
-    mBinding.rlLogin.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        mBinding.viewCritter.applyNeutral();
-        KeyboardUtils.hideSoftInput(LoginActivity.this);
-      }
-    });
     InputWatcher watcher = new InputWatcher();
     InputWatcher.WatchCondition nameCondition = new InputWatcher.WatchCondition();
     nameCondition.setLength(11);
@@ -142,25 +91,6 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
   }
 
-  private void addTextWatcherNameEt() {
-    mBinding.etName.addTextChangedListener(new TextWatcher() {
-      @Override
-      public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-      }
-
-      @Override
-      public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-      }
-
-      @Override
-      public void afterTextChanged(Editable s) {
-        mBinding.etName.setTag(true);
-        mBinding.viewCritter.applyWatch(s.length());
-      }
-    });
-  }
 
   private void initPresenter() {
     mLoginPresenter.setView(this);
@@ -194,11 +124,6 @@ public class LoginActivity extends BaseActivity implements LoginView {
   }
 
   public void changeInputType(View view) {
-    if (mBinding.ivShowPwd.isChecked()) {
-      mBinding.viewCritter.applyShy();
-    } else {
-      mBinding.viewCritter.applyPeek();
-    }
     InputUtil.showHidePwd(mBinding.etPwd);
   }
 
@@ -271,7 +196,5 @@ public class LoginActivity extends BaseActivity implements LoginView {
   public void selectEncryption(View view) {
 //    mNavigator.navigateTo(getContext(), SelectLockEncryptionActivity.class);
   }
-
-
 
 }
