@@ -17,6 +17,7 @@ import com.blankj.utilcode.util.KeyboardUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.qtec.homestay.AndroidApplication;
 import com.qtec.homestay.R;
+import com.qtec.homestay.domain.exception.ErrorBundle;
 import com.qtec.homestay.internal.di.components.ApplicationComponent;
 import com.qtec.homestay.internal.di.modules.ActivityModule;
 import com.qtec.homestay.navigation.Navigator;
@@ -139,13 +140,12 @@ public abstract class BaseActivity extends AppCompatActivity implements LoadData
     return true;
   }
 
-
   @Override
-  public void onError(String message) {
+  public void onError(ErrorBundle bundle) {
+    String message = bundle.getErrorMessage();
     if (!TextUtils.isEmpty(message)) {
       ToastUtils.showShort(message);
     }
-
   }
 
   @Override

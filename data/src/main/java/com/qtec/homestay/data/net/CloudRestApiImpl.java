@@ -246,9 +246,9 @@ public class CloudRestApiImpl implements CloudRestApi {
     }
   }
 
-  private void checkNetworkConnection(ObservableEmitter<?> subscriber) {
+  private void checkNetworkConnection(ObservableEmitter<?> emitter) {
     if (!isThereInternetConnection()) {
-      subscriber.onError(new NetworkConnectionException());
+      emitter.onError(new NetworkConnectionException("没有网络连接，请先连接网络"));
     }
   }
 

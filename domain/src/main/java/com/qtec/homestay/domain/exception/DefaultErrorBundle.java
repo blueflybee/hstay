@@ -20,7 +20,7 @@ package com.qtec.homestay.domain.exception;
  */
 public class DefaultErrorBundle implements ErrorBundle {
 
-  private static final String DEFAULT_ERROR_MSG = "Unknown error";
+  private static final String DEFAULT_ERROR_MSG = "未知异常";
 
   private final Exception exception;
 

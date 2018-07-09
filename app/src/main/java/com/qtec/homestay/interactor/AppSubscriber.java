@@ -62,10 +62,7 @@ public abstract class AppSubscriber<T> extends DefaultObserver<T> {
   protected void handleExceptionOnUI(Exception singleThrowable) {
     if (loadDataView != null) {
       loadDataView.hideLoading();
-      String errorMessage = ErrorMessageFactory.create(loadDataView.getContext(),
-          new DefaultErrorBundle(singleThrowable).getException());
-      System.out.println("errorMessage = " + errorMessage);
-      loadDataView.onError(errorMessage);
+      loadDataView.onError(new DefaultErrorBundle(singleThrowable));
     }
   }
 

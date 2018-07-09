@@ -38,6 +38,8 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 
 
 /**
@@ -63,7 +65,27 @@ public class FakeCloudRepository implements CloudRepository {
 
   @Override
   public Observable<LoginResponse> login(IRequest request) {
-    return null;
+    return Observable.create(new ObservableOnSubscribe<LoginResponse>() {
+      @Override
+      public void subscribe(ObservableEmitter<LoginResponse> emitter) throws Exception {
+//        NullPointerException nullPointerException1 = new NullPointerException("NullPointerException1");
+//        emitter.onError(nullPointerException1);
+//        throw nullPointerException1;
+
+        LoginResponse response = new LoginResponse();
+        response.setToken("asd9f8as9df8asd7gadsfua90sd8f09asd");
+        response.setUserHeadImg("img");
+        response.setUserUniqueKey("unikey");
+        response.setUserNickName("jklolin");
+        response.setUserPhone("13866666666");
+        response.setId(Integer.MAX_VALUE);
+        emitter.onNext(response);
+//        QtecResult<LoginResponse> result = new QtecResult<>();
+//        result.setData(response);
+//        Type type = new TypeToken<QtecResult<LoginResponse>>() {
+//        }.getType();
+      }
+    });
 
 //    return Observable.create(subscriber -> {
 //

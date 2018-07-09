@@ -19,6 +19,7 @@ import com.qtec.homestay.R;
 import com.qtec.homestay.data.constant.PrefConstant;
 import com.qtec.homestay.data.net.CloudUrlPath;
 import com.qtec.homestay.databinding.ActivityLoginCritterBinding;
+import com.qtec.homestay.domain.exception.ErrorBundle;
 import com.qtec.homestay.domain.model.mapp.rsp.LoginResponse;
 import com.qtec.homestay.internal.di.components.DaggerUserComponent;
 import com.qtec.homestay.internal.di.modules.UserModule;
@@ -259,8 +260,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
   }
 
   @Override
-  public void onError(String message) {
-    mBinding.tvTips.setText(message);
+  public void onError(ErrorBundle bundle) {
+    mBinding.tvTips.setText(bundle.getErrorMessage());
   }
 
   public void selectServer(View view) {

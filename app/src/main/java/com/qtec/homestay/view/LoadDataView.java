@@ -6,6 +6,8 @@ package com.qtec.homestay.view;
 
 import android.content.Context;
 
+import com.qtec.homestay.domain.exception.ErrorBundle;
+
 /**
  * Interface representing a View that will use to load data.
  */
@@ -33,9 +35,9 @@ public interface LoadDataView {
   /**
    * Show an error message
    *
-   * @param message A string representing an error.
+   * @param bundle A err form data
    */
-  void onError(String message);
+  void onError(ErrorBundle bundle);
 
   /**
    * Get a {@link Context}.
