@@ -42,7 +42,6 @@ import com.qtec.homestay.domain.params.IRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.reactivestreams.Subscriber;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -52,7 +51,6 @@ import javax.inject.Singleton;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
 
 /**
  * {@link CloudRestApi} implementation for retrieving data from the network.
