@@ -17,25 +17,7 @@ import com.qtec.homestay.domain.model.mapp.req.TransmitRequest;
 public class EncryptInfoFactory {
 
   public static QtecMultiEncryptInfo createMultiEncryptInfo(Object routerData, String path, String method) {
-    QtecEncryptInfo routerEncryptInfo = new QtecEncryptInfo<>();
-    routerEncryptInfo.setRequestUrl(path);
-    routerEncryptInfo.setMethod(method);
-    routerEncryptInfo.setData(routerData);
-
-    //build transmit
-    TransmitRequest<QtecEncryptInfo> transmit = new TransmitRequest<>();
-    transmit.setRouterSerialNo(GlobleConstant.getgDeviceId());
-    transmit.setEncryptInfo(routerEncryptInfo);
-
-    //build cloud EncryptInfo
-    QtecEncryptInfo<TransmitRequest> cloudEncryptInfo = new QtecEncryptInfo<>();
-    cloudEncryptInfo.setData(transmit);
-
-    QtecMultiEncryptInfo multiEncryptInfo = new QtecMultiEncryptInfo();
-    multiEncryptInfo.setCloudEncryptInfo(cloudEncryptInfo);
-    multiEncryptInfo.setRouterEncryptInfo(routerEncryptInfo);
-
-    return multiEncryptInfo;
+    return createMultiEncryptInfo(GlobleConstant.getgDeviceId(), routerData, path, method);
   }
 
   public static QtecMultiEncryptInfo createMultiEncryptInfo(String routerId, Object routerData, String path, String method) {
