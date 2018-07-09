@@ -102,9 +102,7 @@ public class RouterRestApiImpl implements RouterRestApi {
 
 //    ((QtecEncryptInfo) request).setToken(CloudUrlPath.getToken());
     Object data = null;
-    if (apiPostConnection.getClass() != MockApiPostConnection.class) {
-      checkNetworkConnection(subscriber);
-    }
+    checkNetworkConnection(subscriber);
 
     JsonMapper jsonMapper = new JsonMapper();
 

@@ -138,9 +138,7 @@ public class CloudRestApiImpl implements CloudRestApi {
 
     Object data = null;
 
-    if (apiPostConnection.getClass() != MockApiPostConnection.class) {
-      checkNetworkConnection(emitter);
-    }
+    checkNetworkConnection(emitter);
 
     JsonMapper jsonMapper = new JsonMapper();
 
