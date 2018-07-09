@@ -16,16 +16,16 @@ import io.reactivex.Observable;
  * 登录用例
  *
  * @author shaojun
- * @name LoginUseCase
+ * @name Login
  * @package com.fernandocejas.android10.sample.domain.interactor
  * @date 15-9-9
  */
-public class LoginUseCase extends UseCase<LoginResponse> {
+public class Login extends UseCase<LoginResponse> {
 
   private final CloudRepository cloudRepository;
 
-  @Inject public LoginUseCase(CloudRepository cloudRepository, ThreadExecutor threadExecutor,
-                              PostExecutionThread postExecutionThread) {
+  @Inject public Login(CloudRepository cloudRepository, ThreadExecutor threadExecutor,
+                       PostExecutionThread postExecutionThread) {
     super(threadExecutor, postExecutionThread);
     this.cloudRepository = cloudRepository;
   }
