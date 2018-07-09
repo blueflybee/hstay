@@ -17,7 +17,6 @@ public class QtecMultiEncryptInfo implements IRequest {
 
   private QtecEncryptInfo routerEncryptInfo;
   private QtecEncryptInfo<TransmitRequest> cloudEncryptInfo;
-  private Boolean isRouterDirectConnect = false;
 
   public QtecEncryptInfo getRouterEncryptInfo() {
     return routerEncryptInfo;
@@ -35,11 +34,4 @@ public class QtecMultiEncryptInfo implements IRequest {
     this.cloudEncryptInfo = cloudEncryptInfo;
   }
 
-  public Boolean getRouterDirectConnect() {
-    return isRouterDirectConnect;
-  }
-
-  public void setRouterDirectConnect(Boolean routerDirectConnect) {
-    isRouterDirectConnect = routerDirectConnect;
-  }
 }
