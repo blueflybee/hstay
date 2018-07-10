@@ -2,6 +2,7 @@
 
 package com.qtec.homestay.view.login.login;
 
+import android.annotation.SuppressLint;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;

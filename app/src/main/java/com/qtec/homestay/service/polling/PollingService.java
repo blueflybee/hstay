@@ -35,10 +35,10 @@ public class PollingService extends Service {
   }
 
   @Override
-  public void onStart(Intent intent, int startId) {
+  public int onStartCommand(Intent intent, int flags, int startId) {
     new PollingThread().start();
+    return super.onStartCommand(intent, flags, startId);
   }
-
 
   @Override
   public void onDestroy() {
