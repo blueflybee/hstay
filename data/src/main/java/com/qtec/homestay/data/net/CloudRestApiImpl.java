@@ -55,6 +55,7 @@ import io.reactivex.ObservableEmitter;
 /**
  * {@link CloudRestApi} implementation for retrieving data from the network.
  */
+@SuppressWarnings("unchecked")
 @Singleton
 public class CloudRestApiImpl implements CloudRestApi {
 

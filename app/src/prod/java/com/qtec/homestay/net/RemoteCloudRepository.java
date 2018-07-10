@@ -47,6 +47,7 @@ import io.reactivex.Observable;
  *     version: 1.0
  * </pre>
  */
+@SuppressWarnings("unchecked")
 @Singleton
 public class RemoteCloudRepository implements CloudRepository {
 

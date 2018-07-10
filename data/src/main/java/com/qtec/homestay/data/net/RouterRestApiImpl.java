@@ -49,6 +49,7 @@ import io.reactivex.ObservableEmitter;
 /**
  * {@link CloudRestApi} implementation for retrieving data from the network.
  */
+@SuppressWarnings("unchecked")
 @Singleton
 public class RouterRestApiImpl implements RouterRestApi {
 
@@ -82,6 +83,7 @@ public class RouterRestApiImpl implements RouterRestApi {
     RouterRestApiImpl.apiPostConnection = apiPostConnection;
   }
 
+
   @Override
   public Observable<RouterStatusResponse<List<Status>>> getRouterStatus(final IRequest request) {
     return Observable.create(emitter -> {
@@ -101,7 +103,7 @@ public class RouterRestApiImpl implements RouterRestApi {
   private Object requestService(IRequest request, Type type, ObservableEmitter<?> subscriber, int encryption) {
 
 //    ((QtecEncryptInfo) request).setToken(CloudUrlPath.getToken());
-    Object data = null;
+    Object data;
     checkNetworkConnection(subscriber);
 
     JsonMapper jsonMapper = new JsonMapper();

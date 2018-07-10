@@ -28,6 +28,7 @@ import java.lang.reflect.Type;
  *     version: 1.0
  * </pre>
  */
+@SuppressWarnings("unchecked")
 public class CloudConverter implements IConverter {
 
   private SM4Utils mSm4Utils;
