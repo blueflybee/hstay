@@ -1,4 +1,6 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -9,7 +11,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.blueflybee.titlebarlib.widget.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            titlebar:fillStatusBar="false"
+            titlebar:titleBarColor="@color/blue_2196f3"
+            titlebar:centerText="标题栏"
+            titlebar:centerType="textView"
+            titlebar:leftType="imageButton"
+            titlebar:rightText="确定"
+            titlebar:rightType="textView" />
+
         <LinearLayout
+            android:layout_below="@+id/title_bar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
