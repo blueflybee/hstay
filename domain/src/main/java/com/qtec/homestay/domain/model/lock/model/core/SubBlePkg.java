@@ -12,7 +12,7 @@ import com.qtec.homestay.domain.utils.BleHexUtil;
  *     version: 1.0
  * </pre>
  */
-public class SubBlePkg implements Comparable{
+public class SubBlePkg implements Comparable<SubBlePkg> {
 
   private String head;
   private String offset;
@@ -85,8 +85,8 @@ public class SubBlePkg implements Comparable{
   }
 
   @Override
-  public int compareTo(Object o) {
-    return getIndex() - ((SubBlePkg) o).getIndex();
+  public int compareTo(SubBlePkg o) {
+    return getIndex() - o.getIndex();
   }
 
   public byte[] toBytes() {

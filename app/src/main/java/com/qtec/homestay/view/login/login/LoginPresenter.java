@@ -13,6 +13,7 @@ import com.qtec.homestay.data.net.CloudRestApiImpl;
 import com.qtec.homestay.data.net.CloudUrlPath;
 import com.qtec.homestay.domain.constant.CloudUseCaseComm;
 import com.qtec.homestay.domain.interactor.UseCase;
+import com.qtec.homestay.domain.interactor.cloud.Login;
 import com.qtec.homestay.domain.model.core.QtecEncryptInfo;
 import com.qtec.homestay.domain.model.mapp.req.LoginRequest;
 import com.qtec.homestay.domain.model.mapp.rsp.LoginResponse;
@@ -37,11 +38,11 @@ import dagger.internal.Preconditions;
 @PerActivity
 public class LoginPresenter implements Presenter {
 
-  private final UseCase loginUseCase;
+  private final Login loginUseCase;
   private LoginView loginView;
 
   @Inject
-  public LoginPresenter(@Named(CloudUseCaseComm.LOGIN) UseCase loginUseCase) {
+  public LoginPresenter(@Named(CloudUseCaseComm.LOGIN) Login loginUseCase) {
     this.loginUseCase = Preconditions.checkNotNull(loginUseCase, "loginUseCase is null");
   }
 

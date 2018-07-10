@@ -3,6 +3,7 @@ package com.qtec.homestay.utils;
 import com.qtec.homestay.data.constant.GlobleConstant;
 import com.qtec.homestay.domain.model.core.QtecEncryptInfo;
 import com.qtec.homestay.domain.model.core.QtecMultiEncryptInfo;
+import com.qtec.homestay.domain.model.mapp.req.LoginRequest;
 import com.qtec.homestay.domain.model.mapp.req.TransmitRequest;
 
 /**
@@ -21,7 +22,7 @@ public class EncryptInfoFactory {
   }
 
   public static QtecMultiEncryptInfo createMultiEncryptInfo(String routerId, Object routerData, String path, String method) {
-    QtecEncryptInfo routerEncryptInfo = new QtecEncryptInfo<>();
+    QtecEncryptInfo<Object> routerEncryptInfo = new QtecEncryptInfo<>();
     routerEncryptInfo.setRequestUrl(path);
     routerEncryptInfo.setMethod(method);
     routerEncryptInfo.setData(routerData);
@@ -43,7 +44,7 @@ public class EncryptInfoFactory {
   }
 
   public static QtecEncryptInfo createEncryptInfo(Object request) {
-    QtecEncryptInfo encryptInfo = new QtecEncryptInfo<>();
+    QtecEncryptInfo<Object> encryptInfo = new QtecEncryptInfo<>();
     encryptInfo.setData(request);
     return encryptInfo;
   }

@@ -21,6 +21,7 @@ import com.qtec.homestay.domain.executor.PostExecutionThread;
 import com.qtec.homestay.domain.executor.ThreadExecutor;
 import com.qtec.homestay.domain.interactor.UseCase;
 import com.qtec.homestay.domain.interactor.cloud.Login;
+import com.qtec.homestay.domain.model.mapp.rsp.LoginResponse;
 import com.qtec.homestay.domain.repository.CloudRepository;
 import com.qtec.homestay.internal.di.PerActivity;
 
@@ -41,8 +42,8 @@ public class UserModule {
   @Provides
   @PerActivity
   @Named(CloudUseCaseComm.LOGIN)
-  UseCase provideLoginUseCase(CloudRepository cloudRepository,
-                              ThreadExecutor threadExecutor, PostExecutionThread postExecutionThread) {
+  Login provideLoginUseCase(CloudRepository cloudRepository,
+                                             ThreadExecutor threadExecutor, PostExecutionThread postExecutionThread) {
 
     return new Login(cloudRepository, threadExecutor, postExecutionThread);
   }
