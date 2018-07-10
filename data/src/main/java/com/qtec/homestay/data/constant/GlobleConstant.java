@@ -1,9 +1,6 @@
 package com.qtec.homestay.data.constant;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * <pre>
  *     author : shaojun
