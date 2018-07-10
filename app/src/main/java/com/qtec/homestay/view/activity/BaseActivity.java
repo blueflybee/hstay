@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.blankj.utilcode.util.KeyboardUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.blueflybee.titlebarlib.widget.TitleBar;
 import com.qtec.homestay.AndroidApplication;
 import com.qtec.homestay.R;
 import com.qtec.homestay.domain.exception.ErrorBundle;
@@ -23,8 +24,6 @@ import com.qtec.homestay.internal.di.modules.ActivityModule;
 import com.qtec.homestay.navigation.Navigator;
 import com.qtec.homestay.utils.DialogUtil;
 import com.qtec.homestay.view.LoadDataView;
-import com.qtec.homestay.view.component.TitleBar;
-import com.qtec.homestay.view.login.login.LoginActivity;
 import com.umeng.analytics.MobclickAgent;
 
 import javax.inject.Inject;
@@ -101,11 +100,13 @@ public abstract class BaseActivity extends AppCompatActivity implements LoadData
     if (mTitleBar == null) {
       mTitleBar = (TitleBar) findViewById(R.id.title_bar);
     }
-    mTitleBar.setTitleCenter(title);
-    setSupportActionBar(mTitleBar.getToolbar());
-    mTitleBar.setLeftAsBackButton();
+    mTitleBar.getCenterTextView().setText(title);
+    mTitleBar.setListener((view, action, extra) -> {
+      if (action == TitleBar.ACTION_LEFT_BUTTON) {
+        finish();
+      }
+    });
   }
-
 
   @Override
   public void showLoading() {
@@ -155,17 +156,6 @@ public abstract class BaseActivity extends AppCompatActivity implements LoadData
 //        getContext(),
 //        "登录失效", "您的登录已失效，请重新登录",
 //        v -> mNavigator.navigateNewAndClearTask(BaseActivity.this.getContext(), LoginActivity.class));
-  }
-
-
-  protected void changeTitleRightBtnStyle(String input) {
-    changeTitleRightBtnStyle(TextUtils.isEmpty(input));
-  }
-
-  protected void changeTitleRightBtnStyle(boolean empty) {
-    boolean isModify = !empty;
-    int color = isModify ? R.color.black_424242 : R.color.gray_cdcdcd;
-    mTitleBar.setRightEnable(isModify, getResources().getColor(color));
   }
 
   @NonNull

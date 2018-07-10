@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.blueflybee.titlebarlib.widget.TitleBar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    titlebar:centerText="标题栏"
+    titlebar:centerType="textView"
+    titlebar:fillStatusBar="false"
+    titlebar:leftType="imageButton"
+    titlebar:rightText="确定"
+    titlebar:rightType="textView"
+    titlebar:titleBarColor="@color/blue_2196f3">
+</com.blueflybee.titlebarlib.widget.TitleBar>

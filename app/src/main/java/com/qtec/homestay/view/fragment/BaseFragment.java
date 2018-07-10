@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ToastUtils;
+import com.blueflybee.titlebarlib.widget.TitleBar;
 import com.qtec.homestay.R;
 import com.qtec.homestay.domain.exception.ErrorBundle;
 import com.qtec.homestay.internal.di.HasComponent;
@@ -23,7 +24,6 @@ import com.qtec.homestay.navigation.Navigator;
 import com.qtec.homestay.utils.DialogUtil;
 import com.qtec.homestay.view.LoadDataView;
 import com.qtec.homestay.view.activity.BaseActivity;
-import com.qtec.homestay.view.component.TitleBar;
 import com.umeng.analytics.MobclickAgent;
 
 import javax.inject.Inject;
@@ -72,11 +72,14 @@ public abstract class BaseFragment extends Fragment implements LoadDataView {
     if (mTitleBar == null) {
       mTitleBar = (TitleBar) getActivity().findViewById(R.id.title_bar);
     }
-    mTitleBar.setTitleCenter(title);
-    ((AppCompatActivity) getActivity()).setSupportActionBar(mTitleBar.getToolbar());
-
-    mTitleBar.setLeftAsBackButton();
+    mTitleBar.getCenterTextView().setText(title);
+    mTitleBar.setListener((view, action, extra) -> {
+      if (action == TitleBar.ACTION_LEFT_BUTTON) {
+        getActivity().finish();
+      }
+    });
   }
+
 
   @Override
   public void showLoading() {
@@ -126,12 +129,6 @@ public abstract class BaseFragment extends Fragment implements LoadDataView {
     et.setSelection(selectionStart);
   }
 
-  protected void changeTitleRightBtnStyle(String input) {
-    boolean isModify = !TextUtils.isEmpty(input);
-    int color = isModify ? R.color.black_424242 : R.color.gray_cdcdcd;
-    mTitleBar.setRightEnable(isModify, getResources().getColor(color));
-  }
-
   @NonNull
   protected String getText(TextView tv) {
     return tv.getText().toString().trim();
@@ -140,6 +137,5 @@ public abstract class BaseFragment extends Fragment implements LoadDataView {
   protected BaseActivity getBaseActivity() {
     return (BaseActivity) getActivity();
   }
-
 
 }

@@ -11,17 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.blueflybee.titlebarlib.widget.TitleBar
-            android:id="@+id/title_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            titlebar:fillStatusBar="false"
-            titlebar:titleBarColor="@color/blue_2196f3"
-            titlebar:centerText="标题栏"
-            titlebar:centerType="textView"
-            titlebar:leftType="imageButton"
-            titlebar:rightText="确定"
-            titlebar:rightType="textView" />
+        <include layout="@layout/title_bar"/>
 
         <LinearLayout
             android:layout_below="@+id/title_bar"

@@ -71,14 +71,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
   }
 
   private void initView() {
-    mBinding.titleBar.setListener(new TitleBar.OnTitleBarListener() {
-      @Override
-      public void onClicked(View view, int action, String extra) {
-        if (TitleBar.ACTION_LEFT_BUTTON == action) {
-          finish();
-        }
-      }
-    });
+    initTitleBar("login");
+
     InputWatcher watcher = new InputWatcher();
     InputWatcher.WatchCondition nameCondition = new InputWatcher.WatchCondition();
     nameCondition.setLength(11);
