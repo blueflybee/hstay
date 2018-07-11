@@ -3,7 +3,6 @@ package com.qtec.homestay.data.utils;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-
 import com.blankj.utilcode.util.DeviceUtils;
 import com.blueflybee.keystore.KeystoreRepertory;
 import com.blueflybee.keystore.data.LZKey;

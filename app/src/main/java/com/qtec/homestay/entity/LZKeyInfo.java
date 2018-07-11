@@ -1,4 +1,4 @@
-package com.qtec.homestay.data;
+package com.qtec.homestay.entity;
 
 import java.io.Serializable;
 import java.util.List;

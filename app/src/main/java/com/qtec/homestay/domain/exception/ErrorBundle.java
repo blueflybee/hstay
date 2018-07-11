@@ -16,7 +16,7 @@
 package com.qtec.homestay.domain.exception;
 
 /**
- * Interface to represent a wrapper around an {@link java.lang.Exception} to manage errors.
+ * Interface to represent a wrapper around an {@link Exception} to manage errors.
  */
 public interface ErrorBundle {
   Exception getException();

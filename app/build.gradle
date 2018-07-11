@@ -107,11 +107,8 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation "com.android.support:design:$rootProject.ext.supportLibVersion"
-    testImplementation "junit:junit:$rootProject.ext.junitVersion"
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    api project(':data')
+//    api project(':data')
     implementation "com.orhanobut:logger:$rootProject.ext.loggerVersion"
     implementation "com.blankj:utilcode:$rootProject.ext.androidUtilCodeVersion"
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
@@ -124,6 +121,20 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
     implementation "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
 
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okHttpVersion"
+
+    //keystore
+    implementation name:'keylibrary-0.0.15', ext:'aar'
+    //sm4
+    implementation 'com.github.blueflybee:sm2sm3sm4:v0.0.3'
     //title bar
     implementation name:'titlebarlib-1.0.0', ext:'aar'
+
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    testImplementation "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
+    testImplementation "org.assertj:assertj-core:$rootProject.ext.assertJVersion"
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 }
