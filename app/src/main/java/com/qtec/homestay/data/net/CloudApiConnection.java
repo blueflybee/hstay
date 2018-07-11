@@ -139,10 +139,7 @@ public class CloudApiConnection implements IPostConnection {
     try {
       OkHttpClient okHttpClient = this.createClient();
 
-
-      if (!CloudUrlPath.PATH_UPLOAD_LOGCAT.equals(bizCode)) {
-        Logger.t("cloud-url").d(url.toString());
-      }
+      Logger.t("cloud-url").d(url.toString());
 
       String requestUrl = this.url + encryptInfo.getRequestUrl();
       String method = encryptInfo.getMethod();
@@ -177,7 +174,6 @@ public class CloudApiConnection implements IPostConnection {
         this.response = response.body().string();
       } else {
         throw new IOException("无法连接到服务器，请检查网络连接");
-        //throw new IOException("Unexpected code " + response);
       }
     } catch (JSONException e) {
       e.printStackTrace();

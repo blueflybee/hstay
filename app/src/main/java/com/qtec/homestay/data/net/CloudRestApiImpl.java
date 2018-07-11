@@ -150,9 +150,7 @@ public class CloudRestApiImpl implements CloudRestApi {
       emitter.onError(new JsonIOException("请求数据不完整"));
     }
 
-    if (!CloudUrlPath.PATH_UPLOAD_LOGCAT.equals(((QtecEncryptInfo) request).getRequestUrl())) {
-      Logger.t("cloud-none-request").json(requestMsg);
-    }
+    Logger.t("cloud-none-request").json(requestMsg);
 
     if (isTrans) {
       requestMsg = mCloudConverter.convertTo(requestMsg, encryption);
@@ -177,9 +175,7 @@ public class CloudRestApiImpl implements CloudRestApi {
       }
     }
 
-    if (!CloudUrlPath.PATH_UPLOAD_LOGCAT.equals(((QtecEncryptInfo) request).getRequestUrl())) {
-      Logger.t("cloud-none-response").json(result);
-    }
+    Logger.t("cloud-none-response").json(result);
 
     preHandleLoginInvalid(emitter, result);
 

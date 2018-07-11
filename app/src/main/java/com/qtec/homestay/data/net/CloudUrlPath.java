@@ -29,6 +29,5 @@ public class CloudUrlPath {
   public static final String PATH_TRANSMIT = "/routerservice/router/dispatch";
 
   public static final String PATH_LOGIN_LIST = "/routerservice/loginlist/pwdlogin";
-  public static final String PATH_UPLOAD_LOGCAT = "/routerservice/test/addandroidlog";
 
 }
