@@ -9,6 +9,7 @@ package com.qtec.homestay.data.net;
  *     version: 1.0
  * </pre>
  */
+@Deprecated
 public class RouterUrlPath {
 
   private static String sToken;

@@ -49,6 +49,7 @@ import okhttp3.Response;
  * Implements {@link Callable} so when executed asynchronously can
  * return a value.
  */
+@Deprecated
 public class RouterApiConnection implements IPostConnection {
 
   public static final String KEY_ENCRYPT_INFO = "encryptInfo";

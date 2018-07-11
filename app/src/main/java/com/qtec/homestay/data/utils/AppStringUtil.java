@@ -12,6 +12,7 @@ import android.text.TextUtils;
  *     version: 1.0
  * </pre>
  */
+@Deprecated
 public class AppStringUtil {
   @NonNull
   public static String cutTail(String decryptJson) {

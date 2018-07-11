@@ -26,6 +26,7 @@ import javax.inject.Singleton;
  */
 @Singleton
 public class Navigator {
+  // TODO: 18-7-11 modify
 
   @Inject
   public void Navigator() {}

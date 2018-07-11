@@ -27,6 +27,7 @@ import io.reactivex.Observable;
 /**
  * CloudRestApi for retrieving data from the router.
  */
+@Deprecated
 public interface RouterRestApi {
 
   String URL_DEBUG = "http://router.qtec.cn/cgi-bin/json.cgi";

@@ -28,6 +28,7 @@ import java.util.List;
  * <p>
  * Json mapper transforms json to object/object to json.
  */
+// TODO: 18-7-11 modify
 public class BleMapper {
 
   private static String AES_Transformation = "AES/ECB/NoPadding";

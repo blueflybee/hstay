@@ -27,6 +27,7 @@ import java.lang.reflect.Type;
  *     version: 1.0
  * </pre>
  */
+@Deprecated
 public class RouterConverter implements IConverter {
 
   public static final String SP_NAME = "sp_router";

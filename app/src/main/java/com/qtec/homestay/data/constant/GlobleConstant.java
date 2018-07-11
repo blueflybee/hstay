@@ -10,6 +10,7 @@ package com.qtec.homestay.data.constant;
  *     version: 1.0
  * </pre>
  */
+@Deprecated
 public class GlobleConstant {
   public static final String NO_ID = "no_id";
   private static String gDeviceId = NO_ID;

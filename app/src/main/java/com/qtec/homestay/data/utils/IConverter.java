@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
  *     version: 1.0
  * </pre>
  */
+@Deprecated
 public interface IConverter {
 
   String EXP_KEY_INVALID = "exp_key_invalid";

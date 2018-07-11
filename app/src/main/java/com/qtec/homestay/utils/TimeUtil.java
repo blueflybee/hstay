@@ -13,6 +13,7 @@ import java.util.Date;
 /**
  * Dialog 工具类
  */
+@Deprecated
 public class TimeUtil {
 
   private TimeUtil() {

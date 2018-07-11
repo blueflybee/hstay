@@ -90,7 +90,7 @@ public class AndroidApplication extends Application {
 //        mBle = service.getBle();
 //
 //        if (mBle != null && !mBle.adapterEnabled()) {
-//          // TODO: enalbe adapter
+//
 //        }
 //      }
 //

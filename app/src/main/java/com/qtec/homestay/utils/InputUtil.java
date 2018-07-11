@@ -1,7 +1,5 @@
 package com.qtec.homestay.utils;
 
-import android.Manifest;
-import android.content.Context;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -9,12 +7,9 @@ import android.text.Selection;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-
-import com.blankj.utilcode.util.PermissionUtils;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -145,7 +140,6 @@ public class InputUtil {
 
       @Override
       public void afterTextChanged(Editable s) {
-        // TODO Auto-generated method stub
 
       }
 

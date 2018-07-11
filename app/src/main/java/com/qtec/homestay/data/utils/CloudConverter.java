@@ -27,6 +27,7 @@ import java.lang.reflect.Type;
  *     version: 1.0
  * </pre>
  */
+@Deprecated
 @SuppressWarnings("unchecked")
 public class CloudConverter implements IConverter {
 

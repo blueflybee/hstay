@@ -49,6 +49,7 @@ import io.reactivex.ObservableEmitter;
 /**
  * {@link CloudRestApi} implementation for retrieving data from the network.
  */
+@Deprecated
 @SuppressWarnings("unchecked")
 @Singleton
 public class RouterRestApiImpl implements RouterRestApi {
