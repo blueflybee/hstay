@@ -75,7 +75,6 @@ ext {
 //    sqlbriteVersion = '0.7.0'
 }
 
-
 task wrapper(type: Wrapper) {
     description 'Creates the gradle wrapper.'
     gradleVersion '4.4'
