@@ -16,7 +16,7 @@ android {
 
     signingConfigs {
         debug {
-            /* File strFile = new File("/home/shaojun/WorkSpaces/AndroidWorkspaces/Work/QuantumRouterAndroid/sign/smart_home_debug.jks")
+            /* File strFile = new File("/home/shaojun/WorkSpaces/AndroidWorkspaces/Work/Homestay/app/sign/smart_home_debug.jks")
              storeFile file(strFile)
              storePassword "qtec123456"
              keyAlias "debugkey0"
@@ -24,7 +24,7 @@ android {
             //println strFile.absolutePath;
         }
         release {
-            File strFile = new File("/home/shaojun/WorkSpaces/AndroidWorkspaces/Work/QuantumRouterAndroid/sign/smart_home_release.jks")
+            File strFile = new File("/home/shaojun/WorkSpaces/AndroidWorkspaces/Work/Homestay/app/sign/smart_home_release.jks")
             storeFile file(strFile)
             storePassword "qtec123456"
             keyAlias "key0"

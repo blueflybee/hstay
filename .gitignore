@@ -22,6 +22,10 @@ out/
 build
 gradle.properties
 
+#create apk
+app/apk
+app/sign
+
 # Local configuration file (sdk path, etc)
 local.properties
 

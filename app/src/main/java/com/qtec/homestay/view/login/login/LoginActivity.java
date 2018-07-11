@@ -111,7 +111,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
   public void login(View view) {
     if (ClickUtil.isFastClick()) return;
-    mLoginPresenter.login(username(), password());
+//    mLoginPresenter.login(username(), password());
+    ToastUtils.showShort("login...");
 //    throw new NullPointerException("crash log test!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
   }
 
