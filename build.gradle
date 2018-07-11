@@ -73,6 +73,7 @@ ext {
 //    espressoVersion = '2.2.2'
 
 //    sqlbriteVersion = '0.7.0'
+
 }
 
 task wrapper(type: Wrapper) {
