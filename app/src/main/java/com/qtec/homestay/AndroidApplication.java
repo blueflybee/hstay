@@ -136,6 +136,7 @@ public class AndroidApplication extends Application {
           public void onGranted(List<String> permissionsGranted) {
             if (permissionsGranted.contains(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
               handleCrashLog();
+
             }
           }
 
