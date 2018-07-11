@@ -86,5 +86,6 @@ task runAppUnitTests(dependsOn: [':app:cleanTestProdDebugUnitTest', ':app:testPr
 }
 
 task runAcceptanceTests(dependsOn: [':app:connectedProdDebugAndroidTest']) {
+
     description 'Run application acceptance tests.'
 }
