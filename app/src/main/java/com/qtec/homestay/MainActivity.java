@@ -3,7 +3,7 @@ package com.qtec.homestay;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-
+@Deprecated
 public class MainActivity extends AppCompatActivity {
 
 //  private Activity mBinding;
