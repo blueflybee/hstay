@@ -36,6 +36,4 @@ public interface CloudRestApi {
    */
   Observable<LoginResponse> login(IRequest request);
 
-  Observable<TransmitResponse<String>> bindRouterToLockTrans(IRequest request);
-
 }

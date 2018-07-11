@@ -129,8 +129,8 @@ public class CloudApiConnection implements IPostConnection {
    */
   @Override
   @Nullable
-  public String requestSyncCall(String requestMsg, String bizCode, QtecEncryptInfo encryptInfo) throws IOException {
-    connectToApi(requestMsg, bizCode, encryptInfo);
+  public String requestSyncCall(String requestMsg, String requestUrl, QtecEncryptInfo encryptInfo) throws IOException {
+    connectToApi(requestMsg, requestUrl, encryptInfo);
     return response;
   }
 
@@ -139,7 +139,7 @@ public class CloudApiConnection implements IPostConnection {
     try {
       OkHttpClient okHttpClient = this.createClient();
 
-      Logger.t("cloud-url").d(url.toString());
+      Logger.t("c-url").d(url.toString());
 
       String requestUrl = this.url + encryptInfo.getRequestUrl();
       String method = encryptInfo.getMethod();
@@ -177,6 +177,7 @@ public class CloudApiConnection implements IPostConnection {
       }
     } catch (JSONException e) {
       e.printStackTrace();
+      throw new IOException("请求数据map封装异常");
     } catch (IOException e) {
       e.printStackTrace();
       throw new IOException("网络有点卡...");

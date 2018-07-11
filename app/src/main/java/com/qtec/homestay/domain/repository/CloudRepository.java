@@ -30,6 +30,4 @@ public interface CloudRepository {
 
   Observable<LoginResponse> login(IRequest request);
 
-  Observable<BindRouterToLockResponse> bindRouterToLockTrans(IRequest request);
-
 }

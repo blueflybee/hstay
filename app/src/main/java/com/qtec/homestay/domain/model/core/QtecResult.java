@@ -9,63 +9,63 @@ import com.qtec.homestay.domain.params.IRequest;
  */
 public class QtecResult<T> implements IRequest {
 
-    private int code;
-    private String msg;
-    private T data;
+  private int code;
+  private String msg;
+  private T data;
 
-    public int getCode() {
-        return code;
-    }
+  public int getCode() {
+    return code;
+  }
 
-    public void setCode(int code) {
-        this.code = code;
-    }
+  public void setCode(int code) {
+    this.code = code;
+  }
 
-    public String getMsg() {
-        return msg;
-    }
+  public String getMsg() {
+    return msg;
+  }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
+  public void setMsg(String msg) {
+    this.msg = msg;
+  }
 
-    public T getData() {
-        return data;
-    }
+  public T getData() {
+    return data;
+  }
 
-    public void setData(T data) {
-        this.data = data;
-    }
+  public void setData(T data) {
+    this.data = data;
+  }
 
-    @Override
-    public String toString() {
-        return "QtecResult{" +
-            "code=" + code +
-            ", msg='" + msg + '\'' +
-            ", data=" + data +
-            '}';
-    }
+  @Override
+  public String toString() {
+    return "QtecResult{" +
+        "code=" + code +
+        ", msg='" + msg + '\'' +
+        ", data=" + data +
+        '}';
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
 
-        QtecResult<?> that = (QtecResult<?>) o;
+    QtecResult<?> that = (QtecResult<?>) o;
 
-        if (code != that.code) return false;
-        if (!msg.equals(that.msg)) return false;
-        return data.equals(that.data);
+    if (code != that.code) return false;
+    if (!msg.equals(that.msg)) return false;
+    return data.equals(that.data);
 
-    }
+  }
 
-    @Override
-    public int hashCode() {
-        int result = code;
-        result = 31 * result + msg.hashCode();
-        result = 31 * result + data.hashCode();
-        return result;
-    }
+  @Override
+  public int hashCode() {
+    int result = code;
+    result = 31 * result + msg.hashCode();
+    result = 31 * result + data.hashCode();
+    return result;
+  }
 
 
 }

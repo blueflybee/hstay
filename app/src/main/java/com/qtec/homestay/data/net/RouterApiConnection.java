@@ -85,8 +85,8 @@ public class RouterApiConnection implements IPostConnection {
    */
   @Override
   @Nullable
-  public String requestSyncCall(String requestMsg, String bizCode, QtecEncryptInfo encryptInfo) throws IOException {
-    connectToApi(requestMsg, bizCode);
+  public String requestSyncCall(String requestMsg, String requestUrl, QtecEncryptInfo encryptInfo) throws IOException {
+    connectToApi(requestMsg, requestUrl);
     return response;
   }
 

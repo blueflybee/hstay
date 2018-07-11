@@ -16,20 +16,16 @@
 package com.qtec.homestay.net;
 
 
-import com.google.gson.reflect.TypeToken;
 import com.orhanobut.logger.Logger;
-import com.qtec.homestay.data.constant.ExceptionConstant;
 import com.qtec.homestay.data.net.CloudRestApi;
 import com.qtec.homestay.data.net.CloudRestApiImpl;
 import com.qtec.homestay.domain.mapper.JsonMapper;
 import com.qtec.homestay.domain.model.core.QtecResult;
 import com.qtec.homestay.domain.model.mapp.rsp.LoginResponse;
 import com.qtec.homestay.domain.model.mapp.rsp.TransmitResponse;
-import com.qtec.homestay.domain.model.router.rsp.BindRouterToLockResponse;
 import com.qtec.homestay.domain.params.IRequest;
 import com.qtec.homestay.domain.repository.CloudRepository;
 
-import java.io.IOException;
 import java.lang.reflect.Type;
 
 import javax.inject.Inject;
@@ -65,80 +61,4 @@ public class RemoteCloudRepository implements CloudRepository {
     return cloudRestApi.login(request);
   }
 
-  @Override
-  public Observable<BindRouterToLockResponse> bindRouterToLockTrans(IRequest request) {
-    return Observable.create(emitter -> cloudRestApi.bindRouterToLockTrans(request)
-        .map(transmitResponse -> {
-          Type type = new TypeToken<QtecResult<BindRouterToLockResponse>>() {
-          }.getType();
-          QtecResult<BindRouterToLockResponse> qtecResult = logRouterResult(transmitResponse, type);
-          if (qtecResult.getCode() != 0) {
-            emitter.onError(new IOException(ExceptionConstant.convertCodeToMsg(qtecResult.getCode(), qtecResult.getMsg())));
-            return null;
-          } else {
-            emitter.onNext(qtecResult.getData());
-            return qtecResult.getData();
-          }
-        }));
-  }
-
-//  @Override
-//  public Observable<TransmitResponse<String>> bindRouterToLockTrans(IRequest request) {
-//    return cloudRestApi.bindRouterToLockTrans(request)
-//        .map(new Function<TransmitResponse<String>, TransmitResponse<String>>() {
-//          @Override
-//          public TransmitResponse<String> apply(TransmitResponse<String> transmit) throws Exception {
-//                      Type type = new TypeToken<QtecResult<BindRouterToLockResponse>>() {
-//          }.getType();
-//          return (QtecResult<BindRouterToLockResponse>) logRouterResult(transmit, type);
-//          }
-//        })
-//        .flatMap(new Function<TransmitResponse<String>, ObservableSource<?>>() {
-//          @Override
-//          public ObservableSource<?> apply(TransmitResponse<String> stringTransmitResponse) throws Exception {
-//            return null;
-//          }
-//        })
-//  }
-
-
-//  @Override
-//  public Observable<BindRouterToLockResponse> bindRouterToLockTrans(IRequest request) {
-//    return cloudRestApi.bindRouterToLockTrans(request)
-//        .map(new Function<TransmitResponse<String>, QtecResult<BindRouterToLockResponse>>() {
-//          @Override
-//          public QtecResult<BindRouterToLockResponse> apply(TransmitResponse<String> transmit) throws Exception {
-//            Type type = new TypeToken<QtecResult<BindRouterToLockResponse>>() {
-//            }.getType();
-//            return (QtecResult<BindRouterToLockResponse>) RemoteCloudRepository.this.logRouterResult(transmit, type);
-//          }
-//        })
-//        .flatMap(new Func1<QtecResult<BindRouterToLockResponse>, Observable<BindRouterToLockResponse>>() {
-//          @Override
-//          public Observable<BindRouterToLockResponse> call(final QtecResult<BindRouterToLockResponse> routerQtecResult) {
-//            return Observable.create(subscriber -> {
-//              if (routerQtecResult.getCode() != 0) {
-//                subscriber.onError(new IOException(ExceptionConstant.convertCodeToMsg(routerQtecResult.getCode(), routerQtecResult.getMsg())));
-//              } else {
-//                subscriber.onNext(routerQtecResult.getData());
-//              }
-//            });
-//          }
-//        });
-//  }
-
-  private QtecResult logRouterResult(TransmitResponse<String> transmit, Type type) {
-    try {
-      String routerEncryptInfo = transmit.getEncryptInfo();
-      Logger.t("router-response").json(routerEncryptInfo);
-      return (QtecResult) mJsonMapper.fromJson(routerEncryptInfo, type);
-    } catch (Exception e) {
-      e.printStackTrace();
-      QtecResult result = new QtecResult();
-      result.setMsg("网关数据格式异常");
-      result.setCode(-1000);
-      return result;
-    }
-
-  }
 }

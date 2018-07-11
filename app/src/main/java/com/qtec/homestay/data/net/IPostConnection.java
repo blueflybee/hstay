@@ -19,7 +19,7 @@ public interface IPostConnection {
   void setSessionId(String sessionId);
 
   @Nullable
-  String requestSyncCall(String requestMsg, String bizCode, QtecEncryptInfo encryptInfo) throws IOException;
+  String requestSyncCall(String requestMsg, String requestUrl, QtecEncryptInfo encryptInfo) throws IOException;
 
   String getUrl();
 }
