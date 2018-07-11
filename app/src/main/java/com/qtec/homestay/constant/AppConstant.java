@@ -10,5 +10,6 @@ package com.qtec.homestay.constant;
  * </pre>
  */
 public class AppConstant {
+  public static final String PLATFORM_ANDROID = "ANDROID";
 
 }

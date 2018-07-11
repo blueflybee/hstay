@@ -9,6 +9,7 @@ package com.qtec.homestay.domain.model.router.rsp;
  *     version: 1.0
  * </pre>
  */
+@Deprecated
 public class FirstGetKeyResponse {
 
   private String encryptinfo;

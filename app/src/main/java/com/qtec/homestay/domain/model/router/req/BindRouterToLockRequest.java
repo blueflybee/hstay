@@ -9,6 +9,7 @@ package com.qtec.homestay.domain.model.router.req;
  *     version: 1.0
  * </pre>
  */
+@Deprecated
 public class BindRouterToLockRequest {
 
   private String devid;

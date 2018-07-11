@@ -11,6 +11,7 @@ import java.io.Serializable;
  *     version: 1.0
  * </pre>
  */
+@Deprecated
 public class RouterStatusResponse<T> {
   private String ownip;
   private String lfssid;

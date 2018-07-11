@@ -18,6 +18,7 @@ package com.qtec.homestay.domain.repository;
 /**
  * Interface that represents a CloudRepository for getting related data.
  */
+@Deprecated
 public interface RouterRepository {
 
 }
