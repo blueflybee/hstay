@@ -147,7 +147,7 @@ public class RouterRestApiImpl implements RouterRestApi {
         String[] result = decryptResult.split(":");
         intent.putExtra(KEY_INVALID_ROUTER_ID, result[1]);
       }
-      intent.setAction(CloudRestApiImpl.ACTION_ROUTER_KEY_INVALID);
+//      intent.setAction(CloudRestApiImpl.ACTION_ROUTER_KEY_INVALID);
       context.sendBroadcast(intent);
     }
 
