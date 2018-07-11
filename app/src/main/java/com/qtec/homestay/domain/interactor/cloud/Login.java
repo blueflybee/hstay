@@ -10,8 +10,6 @@ import com.qtec.homestay.domain.repository.CloudRepository;
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
-
-
 /**
  * 登录用例
  *

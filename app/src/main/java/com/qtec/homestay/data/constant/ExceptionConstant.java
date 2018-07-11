@@ -9,6 +9,7 @@ package com.qtec.homestay.data.constant;
  *     version: 1.0
  * </pre>
  */
+@Deprecated
 public class ExceptionConstant {
 
   /**

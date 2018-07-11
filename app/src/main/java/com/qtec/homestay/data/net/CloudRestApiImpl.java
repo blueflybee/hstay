@@ -64,8 +64,6 @@ public class CloudRestApiImpl implements CloudRestApi {
   private static IPostConnection apiPostConnection;
   private final Context context;
 
-  private final IConverter mCloudConverter = new CloudConverter();
-
   /**
    * Constructor of the class
    *

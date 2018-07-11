@@ -2,8 +2,8 @@ package com.qtec.homestay.data.constant;
 
 import android.support.annotation.NonNull;
 
+import com.blankj.utilcode.util.EncryptUtils;
 import com.blankj.utilcode.util.SPUtils;
-import com.qtec.homestay.data.utils.MD5Util;
 
 /**
  * Preferences 常量
@@ -136,7 +136,7 @@ public class PrefConstant {
   }
 
   public static void setUserPwd(String pwd) {
-    SPUtils.getInstance(SP_NAME).put(PrefConstant.SP_USER_PWD, MD5Util.encryption(pwd));
+    SPUtils.getInstance(SP_NAME).put(PrefConstant.SP_USER_PWD, EncryptUtils.encryptMD5ToString(pwd));
   }
 
 
@@ -144,68 +144,8 @@ public class PrefConstant {
     return SPUtils.getInstance(SP_NAME).getString(SP_USER_PHONE);
   }
 
-  /**
-   * samba 图片备份总开关
-   *
-   * @param
-   * @return
-   */
-  public static Boolean getPictureRestoreState() {
-    return SPUtils.getInstance(SP_NAME).getBoolean(SP_PICTURE_RESTORE_STATE);
-  }
-
-  public static void putPictureRestoreState(Boolean gPictureRestore) {
-    SPUtils.getInstance(SP_NAME).put(PrefConstant.SP_PICTURE_RESTORE_STATE, gPictureRestore);
-  }
-
-  public static String getPictureRestoreRouterId() {
-    return SPUtils.getInstance(SP_NAME).getString(SP_PICTURE_RESTORE_ROUTER_ID);
-  }
-
-  public static void putPictureRestoreRouterId(String routerId) {
-    SPUtils.getInstance(SP_NAME).put(SP_PICTURE_RESTORE_ROUTER_ID, routerId);
-  }
-
-  public static void putSambaAccount(String account) {
-    SPUtils.getInstance(SP_NAME).put(SP_SAMBA_ACCOUNT, account);
-  }
-
-  public static String getSambaAccount() {
-    return SPUtils.getInstance(SP_NAME).getString(SP_SAMBA_ACCOUNT);
-  }
-
-  /**
-  * smb批量上传的地址
-  *
-  * @param
-  * @return
-  */
-  public static void putBatchUploadCurrentPath(String account) {
-    SPUtils.getInstance(SP_NAME).put(SP_SAMBA_BATCH_UPLOAD_PATH, account);
-  }
-
-  public static String getBatchUploadCurrentPath() {
-    return SPUtils.getInstance(SP_NAME).getString(SP_SAMBA_BATCH_UPLOAD_PATH);
-  }
-
-  public static void putSambaPwd(String pwd) {
-    SPUtils.getInstance(SP_NAME).put(SP_SAMBA_PWD, pwd);
-  }
-
-  public static String getSambaPwd() {
-    return SPUtils.getInstance(SP_NAME).getString(SP_SAMBA_PWD);
-  }
-
   public static String getMsgDeviceID() {
     return SPUtils.getInstance(SP_NAME).getString(MSG_DEVICE_ID);
-  }
-
-  public static int getAppVersionCode() {
-    return SPUtils.getInstance(SP_NAME).getInt(SP_APP_VERSION_CODE, 0);
-  }
-
-  public static void saveAppVersionCode(int versionCode) {
-    SPUtils.getInstance(SP_NAME).put(SP_APP_VERSION_CODE, versionCode);
   }
 
 }

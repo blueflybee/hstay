@@ -28,6 +28,4 @@ public class CloudUrlPath {
   public static final String PATH_LOGIN = "/routerservice/login/login";
   public static final String PATH_TRANSMIT = "/routerservice/router/dispatch";
 
-  public static final String PATH_LOGIN_LIST = "/routerservice/loginlist/pwdlogin";
-
 }
