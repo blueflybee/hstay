@@ -25,11 +25,11 @@ allprojects {
         maven { url 'https://jitpack.io' }
     }
 
-//    gradle.projectsEvaluated {
-//        tasks.withType(JavaCompile) {
-//            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
-//        }
-//    }
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }
 
     project.gradle.startParameter.excludedTaskNames.add("lint")
 }
@@ -81,9 +81,9 @@ task wrapper(type: Wrapper) {
     gradleVersion '4.4'
 }
 
-task runUnitTests(dependsOn: [':app:test']) {
-    description 'Run unit tests for the domain layer.'
-}
+//task runDomainUnitTests(dependsOn: [':domain:test']) {
+//    description 'Run unit tests for the domain layer.'
+//}
 //
 //task runDataUnitTests(dependsOn: [':data:cleanTestDebugUnitTest', ':data:testDebugUnitTest']) {
 //    description 'Run unit tests for the data layer.'
@@ -92,8 +92,19 @@ task runUnitTests(dependsOn: [':app:test']) {
 //task runUnitTests(dependsOn: ['runDomainUnitTests', 'runDataUnitTests']) {
 //    description 'Run unit tests for both domain and data layers.'
 //}
+//
+//task runAcceptanceTests(dependsOn: [':app:connectedAndroidTest']) {
+//    description 'Run application acceptance tests.'
+//}
+//////////////////////////////////////////////////////////////
+//task runDomainUnitTests(dependsOn: [':domain:test']) {
+//    description 'Run unit tests for the domain layer.'
+//}
 
-task runAcceptanceTests(dependsOn: [':app:connectedAndroidTest']) {
-    description 'Run application acceptance tests.'
+task runAppUnitTests(dependsOn: [':app:cleanTestProdDebugUnitTest', ':app:testProdDebugUnitTest']) {
+    description 'Run unit tests for the app layer.'
 }
 
+task runAcceptanceTests(dependsOn: [':app:connectedProdDebugAndroidTest']) {
+    description 'Run application acceptance tests.'
+}
